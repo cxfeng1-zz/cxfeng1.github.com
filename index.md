@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: 晓风Blog
+tagline: 一个编程初学者的博客 
 ---
 {% include JB/setup %}
 
