@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 时光之穴
-tagline: 享受编程和技术的乐趣 
+tagline: 分享编程和技术的乐趣 
 ---
 {% include JB/setup %}
 

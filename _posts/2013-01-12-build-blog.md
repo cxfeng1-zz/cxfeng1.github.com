@@ -2,7 +2,7 @@
 layout: post
 title: "手把手教你用Github和jekyll搭建个人博客(上)"
 description: "手把手教你用Github和jekyll搭建个人博客"
-category: 互联网技术
+category: Internet Technology
 tags: [Github, jekyll, Blog] 
 ---
 {% include JB/setup %}
