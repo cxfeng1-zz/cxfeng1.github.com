@@ -63,11 +63,16 @@ Therefore if you like to keep things simple and you prefer the command-line over
 
 # How Jekyll Works
 
-{% highlight php %}  
-<?php
-    echo "hello world";
-?>
-{% endhighlight %} 
+<pre class="prettyprint">
+class Voila {
+public:
+  // Voila
+  static const string VOILA = "Voila";
+
+  // will not interfere with embedded tags.
+}
+</pre>
+
 
 
 	fafwelakjfl!!!
