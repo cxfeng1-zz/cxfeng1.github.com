@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Projects"
-description: "Showcasing all my past and current projects."
+title: 留言
+description: 留言
 group: navigation
 ---
 {% include JB/setup %}

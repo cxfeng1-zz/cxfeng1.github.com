@@ -1,14 +1,13 @@
 ---
 layout: page
-title: "About"
-description: "About Me"
+title: 关于
+description: 关于我
 group: navigation
 ---
 {% include JB/setup %}
 
+City:Hangzhou, China
  
-我的微博：[Adam晓](http://weibo.com/619719222)
+Weibo：[@Adam晓](http://weibo.com/619719222)
 
-我的邮箱：cxfeng1@gmail.com
-
-我的Github：cxfeng1
+Email：cxfeng1@gmail.com

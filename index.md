@@ -1,12 +1,13 @@
 ---
 layout: page
-title: 时光之穴
+title: 晓风
 tagline: 分享编程和技术的乐趣 
 ---
 {% include JB/setup %}
 
-    
-## 文章列表
+![pic](/images/stars.jpg)
+
+## 最新文章 
 
 <ul class="posts">
   {% for post in site.posts %}
