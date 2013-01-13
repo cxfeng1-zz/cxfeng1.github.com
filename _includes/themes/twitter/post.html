@@ -6,6 +6,9 @@
   <div class="span8">
     {{ content }}
     <hr>
+<div class='social-share-button' data-title='{{ page.title }}'>
+<b>share to:</b>
+</div>
     <div class="pagination">
       <ul>
       {% if page.previous %}
@@ -22,7 +25,9 @@
       </ul>
     </div>
     <hr>
+	<!--
     {% include JB/comments %}
+	-->
   </div>
   
   <div class="span4">
@@ -39,19 +44,20 @@
   {% endunless %}  
   </div>
 </div>
+	
 
-    <!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"xiao82"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- Duoshuo Comment END -->
-    
+<!-- Duoshuo Comment BEGIN -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xiao82"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = 'http://static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<script src="assets/javascripts/require-js/plugins/share.js"></script>
+<!-- Duoshuo Comment END -->
+
