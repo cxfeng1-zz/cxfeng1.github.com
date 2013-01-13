@@ -6,7 +6,7 @@ group: navigation
 ---
 {% include JB/setup %}
 
-City:Hangzhou, China
+City：Hangzhou, China
  
 Weibo：[@Adam晓](http://weibo.com/619719222)
 
