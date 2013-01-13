@@ -6,25 +6,41 @@
   <div class="span8">
     {{ content }}
     <hr>
-<div class='social-share-button' data-title='{{ page.title }}'>
-<b>分享:</b>
-</div>
+
     <div class="pagination">
       <ul>
       {% if page.previous %}
         <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
       {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev disabled"><a>&larr; 上一篇</a></li>
       {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">全部文章</a></li>
       {% if page.next %}
         <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
       {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next disabled"><a>下一篇 &rarr;</a>
       {% endif %}
       </ul>
     </div>
     <hr>
+	<!-- Baidu Button BEGIN -->
+	<b>分享到:</b>
+	<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_douban"></a>
+	<a class="bds_qzone"></a>
+	<a class="bds_t163"></a>
+	<span class="bds_more"></span>
+	<a class="shareCount"></a>
+	</div>
+	<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=4664849" ></script>
+	<script type="text/javascript" id="bdshell_js"></script>
+	<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+	</script>
+	<!-- Baidu Button END -->
 	<!--
     {% include JB/comments %}
 	-->
@@ -44,9 +60,9 @@
   {% endunless %}  
   </div>
 </div>
-	
 
 <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"xiao82"};
 (function() {
@@ -58,6 +74,5 @@ var duoshuoQuery = {short_name:"xiao82"};
 	|| document.getElementsByTagName('body')[0]).appendChild(ds);
 })();
 </script>
-<script src="assets/javascripts/require-js/plugins/share.js"></script>
 <!-- Duoshuo Comment END -->
 
