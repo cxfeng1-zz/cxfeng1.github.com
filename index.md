@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 晓丰
+title: 隐风
 tagline: 分享编程和技术的乐趣 
 ---
 {% include JB/setup %}
