@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 隐风
+title: 隐小风
 tagline: 分享编程和技术的乐趣 
 ---
 {% include JB/setup %}
