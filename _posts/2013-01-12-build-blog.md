@@ -199,6 +199,10 @@ PS:DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它�
 
 **site**是Jekyll生成的最终的文档，不用去关心。最好把他放在你的.gitignore文件中忽略它。
 
+###创建一篇文章
+
+	rake post title="Hello World"
+
 ##管理评论
 
 模板部分到此就算是配置完毕了，但是Jekyll只是个静态页面的发布系统，如果想要评论呢？也很简单。
