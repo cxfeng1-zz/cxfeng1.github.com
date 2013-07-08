@@ -25,7 +25,7 @@ Usage:
 {% else %}
 {% for weight in (1..5) %}
   {% for node in pages_list %}
-    {% if node.weight == weight and node.title != null %}
+    {% if node.weight == weight %}
       {% if group == null or group == node.group %}
       	{% if page.url == node.url %}
       	<li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
