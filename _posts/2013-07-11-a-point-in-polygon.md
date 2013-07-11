@@ -7,6 +7,7 @@ tags: [Algorithm]
 ---
 {% include JB/setup %}
 
+
 ##问题 
 假设我们有一个多边形由n个点组成`Pn={p1,p2,p3,p4,p5...pn} ` , 求一个点`p(x,y)`是否在多边形内？  
 在图形编程中，坐标的利用是不可忽视的。在这里判断一个点是否在多边行内部（可以包括线上）就要利用到各个点的坐标关系。下面开始讨论具体的方法。
@@ -147,4 +148,3 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
 * testx, testy: 需要测试的点的X座标和Y座标
 
 7行代码，简洁，明了，当然，如果你的多边形是可能"有孔"的，还是需要单独考虑的。
-
