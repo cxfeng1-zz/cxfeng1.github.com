@@ -147,3 +147,5 @@ tags: [Algorithm]
 * testx, testy: 需要测试的点的X座标和Y座标
 
 7行代码，简洁，明了，当然，如果你的多边形是可能"有孔"的，还是需要单独考虑的。
+
+[参考资料](http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html)
