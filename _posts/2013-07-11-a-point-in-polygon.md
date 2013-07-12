@@ -126,7 +126,7 @@ tags: [Algorithm]
 
 ##这么长？我和我的小伙伴们都惊呆了，有木有再简单一点的？
 
-**当然有。**
+**当然有。**如果上面的没看懂，那就直接套用下面的函数
 
 
 	int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
