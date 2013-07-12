@@ -8,7 +8,7 @@ Usage:
   	  {% assign pages_list = site.pages %}  
   	  {% include JB/pages_list %}
   	</ul>
-  	
+
   Grouping: (optional): 
   	assign the 'group' variable to constrain the list to only pages/posts
   	in the given group. Note you must define the group manually in the page/post
@@ -36,5 +36,6 @@ Usage:
     {% endif %}
   {% endfor %}
 {% endfor %}
+{% endif %}
 {% assign pages_list = nil %}
 {% assign group = nil %}
