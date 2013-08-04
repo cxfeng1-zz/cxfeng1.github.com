@@ -27,8 +27,10 @@ tags: [Linux]
 * 回到上次所在目录: `cd -`
 * 使用强大的`xargs`(或者`parallel`).它允许你对输出执行其他某些命令, 你可以控制具体执行输出的哪一行(`-L`), 同样`-l{}`也是很方便的, 例子：
 
+
 	find . -name \*.py | xargs grep some_function  
 	cat hosts | xargs -I{} ssh root@{} hostname
+
 
 * `pstree -p`是个很有用的命令, 用来查看进程树
 * 使用`pgrep`和`pkill`来通过名称查找或者发信号给进程(`-f`比较有用)
@@ -38,9 +40,11 @@ tags: [Linux]
 * 在bash脚本中, 使用`set -x`来调试输出, 使用`set -e`可以在遇到错误的时候中止.还可以试试`trap`
 * 在bash脚本中,shell子进程(用括号括起来)可以很方便的组合命令. 下面是一个暂时切换到其他工作目录的例子:
 
+
 	\# do something in current dir  
 	(cd /some/other/dir; other-command)  
 	\# continue in original dir  
+
 
 * 在bash中，有很多种变量扩展.检查一个变量是否存在: `${name:?error message}`.例如, 如果bash脚本需要有一个参数, 就可以写成`input_file=${1:?usage: $0 input_file}`. 算术扩展: `i=$(( (i+1) % 5 ))`. 序列:`{1..10}`. 修剪字符串: `${var%后缀}` 和 `${var#前缀}`.例子: 如果var=foo.pdf, 那么`echo ${var%.pdf}.txt`的结果是"foo.txt".
 * 通过`<(命令)`, 一个命令的输出可以被当成一个文件. 例如, 比较本地和远程的/etc/hosts: `diff /etc/hosts <(ssh somehost cat /ect/hosts)`
@@ -59,9 +63,11 @@ tags: [Linux]
 * 使用`cut`, `paste`, `join`来处理文本文件
 * 通过`sort`和`uniq`可以取文本文件的交集, 并集和不同.
 
+
 	cat a b | sort | uniq > c   # c是并集  	
 	cat a b | sort | uniq -d > c   # c 是交集  
 	cat a b b | sort | uniq -u > c   # c 是 a-b
+
 
 * 语言环境影响很多命令行工具，包括排序的顺序和性能.大部分Linux会将LANG和其他语言环境变量设置成US_EN或者ZH_CN这样的本地化值.这样会导致`sort`和其他命令运行很慢, 如果想使用传统的字节排序, 使用`export LC_ALL=C`(可以考虑将这条命令放入.bashrc中)
 * 使用`awk`和`sed`对数据进行分割.例如,将一个文件中第三列的所有数字相加: `awk '{ x += $3 } END { print x }'`.这可能比用python要快三倍
