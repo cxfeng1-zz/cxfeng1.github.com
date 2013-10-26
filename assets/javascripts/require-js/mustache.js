@@ -4,7 +4,7 @@ Shameless port of a shameless port
  
 See http://github.com/defunkt/mustache for more info.
 */
-define(['jquery'], function($){  
+define(['../../themes/twitter/js/jquery'], function($){
 ;(function($) {
 
 /*!

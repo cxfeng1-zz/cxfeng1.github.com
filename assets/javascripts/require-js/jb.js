@@ -1,5 +1,5 @@
 define([
-  'jquery',
+//  'jquery',
 	'plugins/tabify',
 	'mustache',
 	'plugins/twipsy',
