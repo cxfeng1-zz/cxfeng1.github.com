@@ -20,7 +20,7 @@ author :
   feedburner : cxfeng1
 
 javascripts :
-  enabled : true
+  enabled : false
   baseUrl : "/assets/javascripts/require-js"
 
 
