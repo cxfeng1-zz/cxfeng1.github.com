@@ -252,7 +252,7 @@ vim来写markdown是一个不错的选择，插件的安装和其他vim插件一
 
 将两个 mkd.vim 分别复制到 $VIM 下对应的 syntax 和 ftdetect 文件夹中。Mac和Linux下一般是 ~/.vim/，如果没有对应的文件夹，用mkdir创建.Windows一般就是vim的安装目录下了。一切就是这么简单，复制到对应目录，然后重启你的vim就ok了。
 
-##一些问题
+##一些小问题
 
 ###Markdown 中文列表抽风问题
 
