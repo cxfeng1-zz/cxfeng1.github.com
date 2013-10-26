@@ -221,15 +221,16 @@ PS:DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它�
 
 首先下载[prettify-1-Jun-2011.tar.bz2](https://code.google.com/p/google-code-prettify/downloads/list),在你的模板(比如/_includes/themes/twitter/default.html)的head标签中加入代码(根据自己情况调整css和js的路径)：
 
-	<link href="{{ ASSET_PATH }}/google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="{{ ASSET_PATH }}/google-code-prettify/src/prettify.js"></script>
-</code>
+    <link href="{{ ASSET_PATH }}/prettify/prettify.css" type="text/css" rel="stylesheet" />
+	<script src="{{ ASSET_PATH }}/prettify/prettify.js" type="text/javascript"></script>
 
-在body标签中做如下修改：
+记得在js中调用一下：
 
-	<body onload="prettyPrint()">
+    //添加Google code Hight需要的class
+    $('pre').addClass('prettyprint');
+    prettyPrint();
 
-之后将代码放入< pre class="prettyprint">和< /pre>之间或者< code class="prettyprint">< /code>之间就可以显示代码高亮了。 效果：
+之后就可以显示代码高亮了。 效果：
 
     class Voila {
     public:
