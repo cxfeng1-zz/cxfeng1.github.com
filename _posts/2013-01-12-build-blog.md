@@ -231,15 +231,13 @@ PS:DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它�
 
 之后将代码放入< pre class="prettyprint">和< /pre>之间或者< code class="prettyprint">< /code>之间就可以显示代码高亮了。 效果：
 
-<pre class="prettyprint">
-class Voila {
-public:
-  // Voila
-  static const string VOILA = "Voila";
+    class Voila {
+    public:
+      // Voila
+      static const string VOILA = "Voila";
 
-  // will not interfere with embedded tags.
-}
-</pre>
+      // will not interfere with embedded tags.
+    }
 
 ###在Vim中设置markdown语法高亮
 
