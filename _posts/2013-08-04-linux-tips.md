@@ -25,12 +25,10 @@ tags: [Linux]
 * 在bash中, 可以使用`Ctrl-R`来搜索执行过的命令
 * 在bash中, 可以使用`Ctrl-W`来删除最后一个单词, 使用`Ctrl-U`来删除一行. 运行`man readline` 查看readline手册, 里面有很多默认的快捷键. 
 * 回到上次所在目录: `cd -`
-* 使用强大的`xargs`(或者`parallel`).它允许你对输出执行其他某些命令, 你可以控制具体执行输出的哪一行(`-L`), 同样`-l{}`也是很方便的, 例子：
-
+* 使用强大的`xargs`(或者`parallel`).它允许你对输出执行其他某些命令, 你可以控制具体执行输出的哪一行(`-L`), 同样`-l{}`也是很方便的, 例子：  
 
 	find . -name \*.py | xargs grep some_function  
-	cat hosts | xargs -I{} ssh root@{} hostname
-
+	cat hosts | xargs -I{} ssh root@{} hostname  
 
 * `pstree -p`是个很有用的命令, 用来查看进程树
 * 使用`pgrep`和`pkill`来通过名称查找或者发信号给进程(`-f`比较有用)
