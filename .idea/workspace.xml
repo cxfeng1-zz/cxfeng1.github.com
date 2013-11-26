@@ -5,7 +5,7 @@
     <ignored path="cxfeng1.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="7987bc82-d028-44b3-8214-0b74aa7f5c9b" time="1385298867268" ignored="false" />
-    <file path="/2013-11-24-cache.md" changelist="7987bc82-d028-44b3-8214-0b74aa7f5c9b" time="1385480179106" ignored="false" />
+    <file path="/2013-11-24-cache.md" changelist="7987bc82-d028-44b3-8214-0b74aa7f5c9b" time="1385480372166" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +93,7 @@
       <file leaf-file-name="2013-11-24-cache.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2013-11-24-cache.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="39" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.21710527">
+            <state line="6" column="21" selection-start="88" selection-end="88" vertical-scroll-proportion="0.27631578">
               <folding />
             </state>
           </provider>
@@ -458,7 +458,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2013-11-24-cache.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="39" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.21710527">
+        <state line="6" column="21" selection-start="88" selection-end="88" vertical-scroll-proportion="0.27631578">
           <folding />
         </state>
       </provider>
