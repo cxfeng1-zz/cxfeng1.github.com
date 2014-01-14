@@ -184,27 +184,6 @@ ARC (automatic reference counting)是iOS 5之后引入的一种内存管理机�
 	- (void)setName:(NSString*)str;
 	- (NSString*)name;
 	
-每个属性可以被几个修饰符所修饰:
-
-	@property (nonatomic, readwrite, strong) NSString *name;
-	
-一共有三种修饰符，每种修饰符都有两到三个选项，其中有一个选项是默认的，不用显示声明。
-
-第一种修饰符有两个选择:`nonatomic`和`atomic`，这个修饰符和多线程的环境有关，这里不展开讲了，大部分时间我们都是选择`nonatomic`,可惜它不是默认的选项，所以我们总是要显示地去声明它(叹气- -!).
-
-第二种修饰符也是两个选择:`readwrite`和`readonly`，顾名思义，`readwrite`的属性同时声明了set和get方法，而`readonly`的属性只有get方法。
-
-第三种修饰符用来描述属性的内存管理，默认选项是`assign`,`assign`一般用来描述非指针的原生类型，而对于对象指针来说，一般为`strong`或者`weak`，两者的区别前面已经阐述过。这里着重讲一下另外一个选择`copy`,一般来说，当你有一个属性指向一个有多个子类的对象时，安全的做法是拷贝一份该对象，而不是直接指向它:
-
-	NSMutableString *mutableString = [[NSMutableString alloc] init];
-	Person *person = [[Person alloc] initWithName:name];
-	
-上面的代码存在的问题是，`mutableString`可能在其他地方被修改了，而`person`根本不知道，这样就会导致该对象并没有按你期望的去初始化，防御性的办法就是将属性变成`copy`:
-
-	@property (nonatomic, copy) NSString *name;
-	
-`copy`和`strong`一样都是强引用.
-	
 
 ###synthesize
 
@@ -221,17 +200,59 @@ ARC (automatic reference counting)是iOS 5之后引入的一种内存管理机�
 		return name;
 	}
 
-当属性是`copy`修饰的，生成的set方法会有些变化:
-	
-	- (void)setName:(NSString*)str {
-		name = [str copy];
-	}
-	
 你也可以一次`synthesize`多个属性:
 
 	@synthesize name, sex, age, birthday;
 	
 但我们不能完全依赖于`synthesize`, 因为有时我们也需要自己实现get和set方法，庆幸的是，**自己实现get和set方法和`synthesize`不冲突**.自己的实现会覆盖`synthesize`自动生成的。
+
+**目前，Xcode会在编译期自动生成`@synthesize`声明，所以我们只要声明属性就可以了**
+
+###属性修饰符
+
+每个属性可以被几个修饰符所修饰:
+
+	@property (nonatomic, readwrite, strong) NSString *name;
+	
+属性修饰符主要用来改变`@synthesize`自动产生的代码，**如果你是自己实现get和set方法，那修饰符只是建议性的**.
+
+一共有三种修饰符，每种修饰符都有两到三个选项，其中有一个选项是默认的，不用显示声明。  
+
+第一种修饰符有两个选择:`nonatomic`和`atomic`.  
+如果被`atomic`修饰，自动生成的get和set方法会保证get和set返回完整的值，而不去理会其他线程的set行为，举个例子，线程A执行到get方法中间的时候，线程B执行了set方法，那么线程A会得到B执行之前属性的值，而属性最后的值是B线程set的值。`@synthesize`自动生成的代码类似于这样子:(真实的实现还要复杂一些)
+
+	- (void)setName:(NSString*)str {
+		@synchronized(self) {
+			name = str;	
+		}
+	}
+	- (NSString*)name {
+		@synchronized(self) {
+			return name;
+		}
+	}
+		
+`nonatomic`无法保证这一点，但是它在性能上要比`atomic`更快(因为没有锁的开销).  
+但是`atomic`**并不保证线程安全**，如果A线程在执行get方法的同时，B和C线程也在执行set方法，那么A线程的结果可能有三种，而属性最后的值可能是B线程set方法中的值，也可能是C线程set方法中的值。  
+为了性能，大部分时间我们都是选择`nonatomic`,像`NSString`,`NSArray`这样的不可变属性都是线程安全的，而对于UI的代码也是线程安全的，因为**UI的代码总是在主线程执行**。
+
+第二种修饰符也是两个选择:`readwrite`和`readonly`，顾名思义，`readwrite`的属性同时声明了set和get方法，而`readonly`的属性只有get方法。
+
+第三种修饰符用来描述属性的内存管理，默认选项是`assign`,`assign`一般用来描述非指针的原生类型，而对于对象指针来说，一般为`strong`或者`weak`，两者的区别前面已经阐述过。这里着重讲一下另外一个选择`copy`,一般来说，当你有一个属性指向一个有多个子类的对象时，安全的做法是拷贝一份该对象，而不是直接指向它:
+
+	NSMutableString *mutableString = [[NSMutableString alloc] init];
+	Person *person = [[Person alloc] initWithName:name];
+	
+上面的代码存在的问题是，`mutableString`可能在其他地方被修改了，而`person`根本不知道，这样就会导致该对象并没有按你期望的去初始化，防御性的办法就是将属性变成`copy`:
+
+	@property (nonatomic, copy) NSString *name;
+	
+`copy`和`strong`一样都是强引用.当属性是`copy`修饰的，生成的set方法会有些变化:
+	
+	- (void)setName:(NSString*)str {
+		name = [str copy];
+	}
+	
 
 先写到这吧~
 
