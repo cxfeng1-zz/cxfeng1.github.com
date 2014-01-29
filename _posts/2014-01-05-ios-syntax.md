@@ -253,6 +253,51 @@ ARC (automatic reference counting)是iOS 5之后引入的一种内存管理机�
 		name = [str copy];
 	}
 	
+###pragma mark
+	
+`#pragma mark`可以对一个类的各个方法进行分组，方便查找，一个良好的方法分组应该是这样的:
+
+	#pragma mark - Lifecycle
+
+	- (instancetype)init {}
+	- (void)dealloc {}
+	- (void)viewDidLoad {}
+	- (void)viewWillAppear:(BOOL)animated {}
+	- (void)didReceiveMemoryWarning {}
+
+	#pragma mark - Custom Accessors
+
+	- (void)setCustomProperty:(id)value {}
+	- (id)customProperty {}
+
+	#pragma mark - IBActions
+
+	- (IBAction)submitData:(id)sender {}
+
+	#pragma mark - Public
+
+	- (void)publicMethod {}
+
+	#pragma mark - Private
+
+	- (void)privateMethod {}
+
+	#pragma mark - Protocol conformance
+	#pragma mark - UITextFieldDelegate
+	#pragma mark - UITableViewDataSource
+	#pragma mark - UITableViewDelegate
+
+	#pragma mark - NSCopying
+
+	- (id)copyWithZone:(NSZone *)zone {}
+
+	#pragma mark - NSObject
+
+	- (NSString *)description {}
+	
+对应的XCode的Jump bar就会这样显示:
+
+![pic](/images/jumpBar.jpg)
 
 先写到这吧~
 
