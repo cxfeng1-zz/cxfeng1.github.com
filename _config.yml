@@ -13,7 +13,9 @@ pygments: true
 title : xiao82.com
 tagline: Keep Learning !	
 author :
-  name : Xiaofeng	
+  name : yinxiaofeng	
+  description : blog for yinxiaofeng programming
+  url:http://xiao82.com
   email : cxfeng1@gmail.com
   github : cxfeng1	
   twitter : cxfeng1
