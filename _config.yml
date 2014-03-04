@@ -11,11 +11,11 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : xiao82.com
+name : yinxiaofeng	
+description : blog for yinxiaofeng programming
+url:http://xiao82.com
 tagline: Keep Learning !	
 author :
-  name : yinxiaofeng	
-  description : blog for yinxiaofeng programming
-  url:http://xiao82.com
   email : cxfeng1@gmail.com
   github : cxfeng1	
   twitter : cxfeng1
