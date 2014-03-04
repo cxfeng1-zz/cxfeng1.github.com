@@ -13,8 +13,8 @@ pygments: true
 title : xiao82.com
 name : yinxiaofeng	
 description : blog for yinxiaofeng programming
-url:http://xiao82.com
-tagline: Keep Learning !	
+url : http://xiao82.com
+tagline: Keep Learning 
 author :
   email : cxfeng1@gmail.com
   github : cxfeng1	
