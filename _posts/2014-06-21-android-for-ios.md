@@ -125,7 +125,7 @@ tags: [iOS, Android]
 
 ### Activity 生命周期
 
-![pic](/images/activity_lifecycle)
+![pic](/images/activity_lifecycle.png)
 
 * Activity和UIViewController的生命周期类似，但Android对于Activity的销毁更无情, 所以需要用savedInstanceState或者Intent来保存Activity的状态，等onCreate()的时候再取出来
 * 当屏幕旋转的时候，Activity是会被销毁然后重新创建的，需要保存状态
