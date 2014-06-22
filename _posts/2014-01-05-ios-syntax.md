@@ -3,7 +3,7 @@ layout: post
 title: "Objective-C语法小结"
 description: "Objective-C语法学习小结"
 category: programming
-tags: [ios]
+tags: [iOS]
 ---
 {% include JB/setup %}
 
