@@ -19,6 +19,8 @@ tags: [Linux]
 * 了解正则表达式以及`grep/egrep`的参数
 * 学习使用`apt-get`或者`yum`来寻找和安装软件包.
 
+<!-- more -->
+
 ##日常使用
 
 * 在bash中, 可以使用`Ctrl-R`来搜索执行过的命令

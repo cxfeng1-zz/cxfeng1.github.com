@@ -13,6 +13,9 @@ tags: [iOS, Android]
 * Java没有@property, 必须自己生产get和set方法
 * Java的get方法一般以get为前缀，如getObject
 
+
+<!-- more -->
+
 ### 工程结构
 
 * 工程的第一部分是Java源码
@@ -20,6 +23,7 @@ tags: [iOS, Android]
 * iOS中图片通过@2x来适应屏幕分辨率，而Android通过存放不同的文件夹来处理各种不同分辨率下的图片、字符串
 * XML布局文件就相当于iOS的xib,另外还有其他XML文件用于存放字符串、数字、样式等资源
 * 工程的最后一部分是AndroidManifest.xml, 相当于iOS的Project-Info.plist, 用于存放activity、应用名、intent等信息
+
 
 ### Activity
 
