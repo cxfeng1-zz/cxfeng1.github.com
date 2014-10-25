@@ -5,7 +5,6 @@ description: "Linux tips大全"
 category: Linux
 tags: [Linux]
 ---
-{% include JB/setup %}
 
 首先要学会的一个命令是`man`,如果忘了某个命令的用法,就试着去敲这个命令或者google之.
 
@@ -23,7 +22,7 @@ tags: [Linux]
 ##日常使用
 
 * 在bash中, 可以使用`Ctrl-R`来搜索执行过的命令
-* 在bash中, 可以使用`Ctrl-W`来删除最后一个单词, 使用`Ctrl-U`来删除一行. 运行`man readline` 查看readline手册, 里面有很多默认的快捷键. 
+* 在bash中, 可以使用`Ctrl-W`来删除最后一个单词, 使用`Ctrl-U`来删除一行. 运行`man readline` 查看readline手册, 里面有很多默认的快捷键.
 * 回到上次所在目录: `cd -`
 * 使用强大的`xargs`(或者`parallel`).它允许你对输出执行其他某些命令, 你可以控制具体执行输出的哪一行(`-L`), 同样`-l{}`也是很方便的, 例子：  
 
@@ -62,7 +61,7 @@ tags: [Linux]
 * 通过`sort`和`uniq`可以取文本文件的交集, 并集和不同.
 
 
-	cat a b | sort | uniq > c   # c是并集  	
+	cat a b | sort | uniq > c   # c是并集
 	cat a b | sort | uniq -d > c   # c 是交集  
 	cat a b b | sort | uniq -u > c   # c 是 a-b
 
@@ -78,7 +77,7 @@ tags: [Linux]
 
 ##系统调试
 
-* 如果想要知道磁盘/cpu/网络的状态, 使用`iostat`, `netstat`, `top`, `dstat`. 
+* 如果想要知道磁盘/cpu/网络的状态, 使用`iostat`, `netstat`, `top`, `dstat`.
 * 如果想要知道内存的状态, 使用`free`和`vmstat`.
 * 对于java系统调试,你可以运行`kill -s <pid>`, 堆栈信息(包括垃圾回收信息)会被dump到标准错误或者logs中
 * 使用`mtr`取代`traceroute`来查看网络状态
@@ -91,33 +90,3 @@ tags: [Linux]
 * 使用/proc文件夹.例如:/proc/cpuinfo, /proc/xxx/cwd, /proc/xxx/exe, /proc/xxx/fd/, /proc/xxx/smaps
 * 对于更深层次的系统分析, 看一下`stap`(systemtap)和`perf`
 * 使用`dmesg`查看内核侦测信息(主要是硬件和驱动)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

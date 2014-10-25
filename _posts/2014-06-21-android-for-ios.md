@@ -2,10 +2,9 @@
 layout: post
 title: "iOS开发者如何理解Android"
 description: "iOS开发者如何理解Android"
-category: programming
+category: iOS
 tags: [iOS, Android]
 ---
-{% include JB/setup %}
 
 ### Java
 
@@ -50,9 +49,9 @@ tags: [iOS, Android]
                 Toast.makeText(this, "Result OK!", Toast.LENGTH_SHORT).show();
             }
             return;
-        }    
+        }
         super.onActivityResult(requestCode, resultCode, data);
-	}	
+	}
 
 在Activity完成之后返回结果:
 
@@ -67,11 +66,11 @@ tags: [iOS, Android]
 	    if (returnObject != null) {
             data.putExtra(activityResultString, returnObject.uniqueId);
         }
-    
+
         setResult(RESULT_OK, data);
-        finish();        
+        finish();
 	}
-	
+
 ### Fragment
 
 * Fragment的概念只在Android上有，相当于用来填充Activity的小控件.比如在平板上，你可以放一个列表Fragment在左边，一个详情Fragment在右边
@@ -141,28 +140,3 @@ tags: [iOS, Android]
 * 内存对象
 * 文件存储
 * SQLite，类似于Core Data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

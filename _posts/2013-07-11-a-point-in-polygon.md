@@ -2,13 +2,11 @@
 layout: post
 title: "判定一个点是否在多边形内部"
 description: "如何快速而又优雅地判定一个点是否在多边形内部"
-category: Programming
+category: Algorithm
 tags: [Algorithm]
 ---
-{% include JB/setup %}
 
-
-##问题 
+##问题
 
 假设我们有一个多边形由n个点组成`Pn={p1,p2,p3,p4,p5...pn} ` , 求一个点`p(x,y)`是否在多边形内？  
 在图形编程中，坐标的利用是不可忽视的。在这里判断一个点是否在多边行内部（可以包括线上）就要利用到各个点的坐标关系。下面开始讨论具体的方法。
@@ -37,7 +35,7 @@ tags: [Algorithm]
 还记得上面的那些边界坐标吧？我们可以这样画射线：
 
 * `(Xmin - e, p.y)` 到`p(x,y)`
-* `p(x,y)`到`(Xmax + e, p.y)` 
+* `p(x,y)`到`(Xmax + e, p.y)`
 * `(p.x, Ymin - e)`到`p(x,y)`
 * `p(x,y)`到`(p.x, Ymax + e)`
 
@@ -74,54 +72,54 @@ tags: [Algorithm]
 	#define NO 0
 	#define YES 1
 	#define COLLINEAR 2
-	
+
 	int areIntersecting(
 	    float v1x1, float v1y1, float v1x2, float v1y2,
 	    float v2x1, float v2y1, float v2x2, float v2y2
 	) {
 	    float d1, d2;
 	    float a1, a2, b1, b2, c1, c2;
-	
+
 	    // Convert vector 1 to a line (line 1) of infinite length.
 	    // We want the line in linear equation standard form: A*x + B*y + C = 0
 	    // See: http://en.wikipedia.org/wiki/Linear_equation
 	    a1 = v1y2 - v1y1;
 	    b1 = v1x1 - v1x2;
 	    c1 = (v1x2 * v1y1) - (v1x1 * v1y2);
-	
+
 	    // Every point (x,y), that solves the equation above, is on the line,
 	    // every point that does not solve it, is either above or below the line.
 	    // We insert (x1,y1) and (x2,y2) of vector 2 into the equation above.
 	    d1 = (a1 * v2x1) + (b1 * v2y1) + c1;
 	    d2 = (a1 * v2x2) + (b1 * v2y2) + c1;
-	
+
 	    // If d1 and d2 both have the same sign, they are both on the same side of
 	    // our line 1 and in that case no intersection is possible. Careful, 0 is
 	    // a special case, that's why we don't test ">=" and "<=", but "<" and ">".
 	    if (d1 > 0 && d2 > 0) return NO;
 	    if (d1 < 0 && d2 < 0) return NO;
-	
+
 	    // We repeat everything above for vector 2.
 	    // We start by calculating line 2 in linear equation standard form.
 	    a2 = v2y2 - v2y1;
 	    b2 = v2x1 - v2x2;
 	    c2 = (v2x2 * v1y1) - (v2x1 * v2y2);
-	
+
 	    // Calulate d1 and d2 again, this time using points of vector 1
 	    d1 = (a2 * v1x1) + (b2 * v1y1) + c2;
 	    d2 = (a2 * v1x2) + (b2 * v1y2) + c2;
-	
+
 	    // Again, if both have the same sign (and neither one is 0),
 	    // no intersection is possible.
 	    if (d1 > 0 && d2 > 0) return NO;
 	    if (d1 < 0 && d2 < 0) return NO;
-	
+
 	    // If we get here, only three possibilities are left. Either the two
 	    // vectors intersect in exactly one point or they are collinear
 	    // (they both lie both on the same infinite line), in which case they
 	    // may intersect in an infinite number of points or not at all.
 	    if ((a1 * b2) - (a2 * b1) == 0.0f) return COLLINEAR;
-	
+
 	    // If they are not collinear, they must intersect in exactly one point.
 	    return YES;
 	}

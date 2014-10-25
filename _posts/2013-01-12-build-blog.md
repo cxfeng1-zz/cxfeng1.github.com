@@ -2,10 +2,9 @@
 layout: post
 title: "手把手教你用GitHub和jekyll搭建个人博客"
 description: "手把手教你用GitHub和jekyll搭建个人博客"
-category: InternetTechnology
-tags: [GitHub, jekyll, Blog] 
+category: Other
+tags: [GitHub, jekyll, Blog]
 ---
-{% include JB/setup %}
 
 这几天有时间，鼓捣了一下[GitHub](https://github.com/)，顺便在GitHub上用jekyll搭建了自己的个人博客。凡事都需亲历亲为，原本以为很快能搭好的，结果中间出了各种问题，花了我一天多的时间，只能说自己还是Too young,Too simple。主要参照了[BeiYuu的博客](http://beiyuu.com/github-pages/)和[阮一峰的博客](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)，在此感谢两位大神。
 
@@ -24,8 +23,8 @@ tags: [GitHub, jekyll, Blog]
 + 基于Git，很多东西需要动手，对于不熟悉技术的人很难上手，不像Wordpress有强大的后台
 
 大致就是这样了，下面就详细讲讲搭建步骤：  
-  
- 
+
+
 
 
 ##购买和绑定域名
@@ -41,8 +40,8 @@ tags: [GitHub, jekyll, Blog]
 * 首先添加域名记录，可参考[DNSPod的帮助文档](https://www.dnspod.cn/Support)
 * 在DNSPod自己的域名下添加一条[A记录](http://baike.baidu.com/view/65575.htm)，地址就是GitHub Pages的服务IP地址:204.232.175.78，这个地址可能每个人都不同，具体参照[GitHub](https://help.github.com/articles/setting-up-a-custom-domain-with-pages)
 * 在域名注册商处修改DNS服务:去Godaddy修改Nameservers为这两个地址：f1g1ns1.dnspod.net、f1g1ns2.dnspod.net。如果你不明白在哪里修改，可以参考这里：[Godaddy注册的域名如何使用DNSPod](https://www.dnspod.cn/support/index/fid/119)
-  
-  
+
+
 
 ##学会使用Git和GitHub
 
@@ -76,7 +75,7 @@ Git是版本管理的未来，他的优点我不再赘述，相关资料很多�
 	$ mkdir key_backup
 	$ cp id_rsa* key_backup
 	$ rm id_rsa*
-	
+
 输入下面的代码，就可以生成新的key文件，我们只需要默认设置就好，所以当需要输入文件名的时候，回车就好。
 
 	$ ssh-keygen -t rsa -C "邮件地址@youremail.com"
@@ -109,7 +108,7 @@ Git是版本管理的未来，他的优点我不再赘述，相关资料很多�
 	The authenticity of host 'github.com (207.97.227.239)' can't be established.
 	RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
 	Are you sure you want to continue connecting (yes/no)?
-	
+
 不要紧张，输入yes就好，然后会看到：
 
 	Hi <em>username</em>! You've successfully authenticated, but GitHub does not provide shell access.
@@ -233,12 +232,12 @@ PS:DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它�
 之后就可以显示代码高亮了。 效果：
 
     class Voila {
-    public:
+      public:
       // Voila
       static const string VOILA = "Voila";
-
       // will not interfere with embedded tags.
     }
+
 
 ###在Vim中设置markdown语法高亮
 
